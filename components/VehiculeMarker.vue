@@ -110,6 +110,12 @@ export default {
           iconUrl: require('~/assets/images/iBike.svg'),
           latLng: [vehicule.position.lat, vehicule.position.lng],
           visible: this.$store.state.map.seeBikes
+        }),
+        cines: vehicule => ({
+          iconSize: [30, 30],
+          iconUrl: require('~/assets/images/cine.svg'),
+          latLng: [vehicule.latitude, vehicule.longitude],
+          visible: this.$store.state.map.seeCines
         })
       }
       const infos = providers[this.provider]

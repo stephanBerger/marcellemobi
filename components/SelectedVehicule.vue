@@ -62,7 +62,7 @@ export default {
       //Deep link URL for existing users with app already installed on their device
       location.href = linkApp
       //Download URL (TUNE link) for new users to download the app -->
-      setTimeout(location.href = linkStore, 1000)
+      setTimeout((location.href = linkStore), 1000)
     }
   },
   computed: {
@@ -177,6 +177,14 @@ export default {
             linkStore: `https://play.google.com/store/apps/details?id=com.tier.app&hl=en_US`,
             linkIos: `https://apps.apple.com/app/id1436140272?mt=8`,
             linkBrowser: `https://www.tier.app/fr/`
+          }
+        },
+        cines: v => {
+          return {
+            //line1: v.provider,
+            line2: 'Film tourné ici: ' + v.title,
+            icon: require(`~/assets/images/cine.svg`),
+            linkBrowser: `http://www.google.fr/` + v.provider
           }
         }
       }

@@ -1,4 +1,5 @@
 import Vue from "vue";
+import movies from "~/static/film";
 
 export const state = () => ({
   filterVisible: true,
@@ -8,19 +9,21 @@ export const state = () => ({
   trams: [],
   bus: [],
   metro: [],
+  cines: movies,
   seeMetros: true,
   seeBus: true,
   seeTrams: true,
   seeCars: true,
   seeBikes: true,
   seeTrots: true,
+  seeCines: true,
   selectedVehicule: null,
 });
 
 export const getters = {
   carByIdx: state => idx => state.cars[idx],
   allVehicules: state => [
-    ...state.cars, ...state.bikes, ...state.trots, ...state.bus, ...state.trams
+    ...state.cars, ...state.bikes, ...state.trots, ...state.bus, ...state.trams, ...state.cines
   ]
 }
 
@@ -43,6 +46,9 @@ export const mutations = {
     state.bus = rtms.filter(bus => bus.type == 2);
     state.bus.map(bus => bus.provider = 'bus');
   },
+  SET_CINES(state, cines) {
+    state.cines = cines;
+  },
   TOGGLE_CARS(state) {
     state.seeCars = !state.seeCars;
   },
@@ -57,6 +63,9 @@ export const mutations = {
   },
   TOGGLE_BIKES(state) {
     state.seeBikes = !state.seeBikes;
+  },
+  TOGGLE_CINES(state) {
+    state.seeCines = !state.seeCines;
   },
   TOGGLE_FILTER(state) {
     state.filterVisible = !state.filterVisible;
@@ -89,6 +98,7 @@ export const actions = {
     const rtms = await this.$axios.$get("/vehicules/rtm");
     commit("SET_RTMS", rtms)
   },
+
   fetchAllVehicles({ dispatch }, { lat, lng }) {
     return Promise.all([
       dispatch('fetchTrots', { lat, lng }),

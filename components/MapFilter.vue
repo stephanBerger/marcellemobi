@@ -43,6 +43,14 @@
               <p class="textFilter">Vélo</p>
             </div>
             <div
+              @click="$store.commit('map/TOGGLE_CINES')"
+              class="col-4"
+              :class="{active: $store.state.map.seeCines}"
+            >
+              <img src="~/assets/images/cine.svg" style="width:45px" />
+              <p class="textFilter">Tournages</p>
+            </div>
+            <div
               @click="$store.commit('map/TOGGLE_CARS')"
               class="col-4 borderCentral"
               :class="{active: $store.state.map.seeCars}"
