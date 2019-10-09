@@ -46,9 +46,9 @@
         <a
           v-else-if="vehiculeInfo.linkBrowser"
           :href="vehiculeInfo.linkBrowser"
-          target="_blank"
+          target
           class="btn buttonGoApp"
-        >{{vehiculeInfo.action || 'Site web'}}</a>
+        >{{vehiculeInfo.action || 'Plus d\'infos'}}</a>
       </div>
       <!--  -->
     </div>
@@ -183,8 +183,8 @@ export default {
           return {
             //line1: v.provider,
             line2: 'Film tourné ici: ' + v.title,
-            icon: require(`~/assets/images/cine.svg`),
-            linkBrowser: `http://www.google.fr/` + v.provider
+            icon: require(`~/assets/images/cine-ticket-dark.png`),
+            linkBrowser: `/movies/` + v.id
           }
         }
       }
@@ -209,8 +209,8 @@ export default {
   border-radius: 10px 10px 0px 0px;
 
   .logoVehicule {
-    width: 50px;
-    height: 60px;
+    width: 50%;
+    margin: 0.5em;
   }
   .svgDescription {
     width: 20px;

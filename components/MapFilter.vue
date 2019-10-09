@@ -8,7 +8,7 @@
         <div
           @click="$store.commit('map/TOGGLE_FILTER')"
           class="buttonGo"
-        >{{$store.state.map.filterVisible ? 'X' : 'Go'}}</div>
+        >{{$store.state.map.filterVisible ? 'v' : '^'}}</div>
       </div>
       <b-collapse :visible="$store.state.map.filterVisible">
         <div v-if="$store.state.map.filterVisible" id="filter" class="container">
@@ -42,14 +42,7 @@
               <img src="~/assets/images/velo.svg" style="width:45px" />
               <p class="textFilter">Vélo</p>
             </div>
-            <div
-              @click="$store.commit('map/TOGGLE_CINES')"
-              class="col-4"
-              :class="{active: $store.state.map.seeCines}"
-            >
-              <img src="~/assets/images/cine.svg" style="width:45px" />
-              <p class="textFilter">Tournages</p>
-            </div>
+
             <div
               @click="$store.commit('map/TOGGLE_CARS')"
               class="col-4 borderCentral"
@@ -66,6 +59,18 @@
             >
               <img src="~/assets/images/trotinette.svg" />
               <p class="textFilter">Trotinette</p>
+            </div>
+
+            <div class="col-8">
+              <p><h5 style="color: #165da4">Voir Marseille autrement :</h5></p>
+            </div>
+            <div
+              @click="$store.commit('map/TOGGLE_CINES')"
+              class="col-4"
+              :class="{active: $store.state.map.seeCines}"
+            >
+              <img src="~/assets/images/cine-ticket-dark.png" style="width:45px" />
+              <p class="textFilter">Tournages</p>
             </div>
           </div>
         </div>

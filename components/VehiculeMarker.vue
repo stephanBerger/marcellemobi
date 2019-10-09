@@ -113,7 +113,7 @@ export default {
         }),
         cines: vehicule => ({
           iconSize: [30, 30],
-          iconUrl: require('~/assets/images/cine.svg'),
+          iconUrl: require('~/assets/images/cine-ticket-light.png'),
           latLng: [vehicule.latitude, vehicule.longitude],
           visible: this.$store.state.map.seeCines
         })
