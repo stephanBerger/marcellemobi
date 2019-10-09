@@ -1,4 +1,18 @@
 export default {
+  generate: {
+    routes: [
+      '/movies/1',
+      '/movies/2',
+      '/movies/3',
+      '/movies/4',
+      '/movies/5',
+      '/movies/6',
+      '/movies/7',
+      '/movies/8',
+      '/movies/9',
+      '/movies/10'
+    ]
+  },
   mode: "spa",
   router: {
     linkActiveClass: "active"
@@ -10,7 +24,7 @@ export default {
     title: 'Marcelle-mobi',
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "vieswport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
