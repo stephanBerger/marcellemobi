@@ -8,7 +8,7 @@
         <div
           @click="$store.commit('map/TOGGLE_FILTER')"
           class="buttonGo"
-        >{{$store.state.map.filterVisible ? 'X' : 'Go'}}</div>
+        >{{$store.state.map.filterVisible ? 'v' : '^'}}</div>
       </div>
       <b-collapse :visible="$store.state.map.filterVisible">
         <div v-if="$store.state.map.filterVisible" id="filter" class="container">

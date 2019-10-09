@@ -46,7 +46,7 @@
         <a
           v-else-if="vehiculeInfo.linkBrowser"
           :href="vehiculeInfo.linkBrowser"
-          target="_blank"
+          target
           class="btn buttonGoApp"
         >{{vehiculeInfo.action || 'Site web'}}</a>
       </div>
@@ -184,7 +184,7 @@ export default {
             //line1: v.provider,
             line2: 'Film tourné ici: ' + v.title,
             icon: require(`~/assets/images/cine.svg`),
-            linkBrowser: `http://www.google.fr/` + v.provider
+            linkBrowser: `http://localhost:3000/movies/` + v.id
           }
         }
       }
